@@ -1,11 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import { getWithExpiry } from "../../common/util/localstorage";
+
+import { accidentsActions } from "../../store";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Icons1 from "../../resources/images/icons1.jpeg";
 import Icons2 from "../../resources/images/icons2.jpeg";
 
 import "./simulation.css";
 import Header from "./Header";
 import Message from "./message";
+import ErrorDialog from "../../common/components/ErrorDialog";
+import { useEffectAsync } from "../../reactHelper";
 export default function Simulation() {
+  const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState([]);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const _accidents = useSelector((state) => state.accidents.items);
+  const [opening, setOpening] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("Error !!");
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffectAsync(async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_URL_NAME}/accidents`,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getWithExpiry("TOKEN")}`,
+          },
+        }
+      );
+      if (response.ok) {
+        response
+          .clone()
+          .json()
+          .then((data) => {
+            dispatch(accidentsActions.setItems(data));
+          });
+        setItems(await response.json());
+        return;
+      }
+      if (response.status === 401) {
+        setErrorMsg("UNAUTHORIZED");
+        setOpening(true);
+        //console.log("UNAUTHORIZED::", response.status);
+        navigate("/login");
+      } else {
+        setErrorMsg(await response.text());
+        setOpening(true);
+        throw Error(await response.text());
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+  const handleOpeningResult = (opening) => {
+    setOpening(false);
+    if (opening) {
+    }
+  };
+
   return (
     <>
       <Header />
@@ -75,23 +136,25 @@ export default function Simulation() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-around",
+                    fontSize: "60px",
+                    color: "blue",
                   }}
                 >
-                  29°C
+                  {_accidents.temperature} °C{" "}
                 </h1>
               </div>
               <div
                 style={{
                   height: "100%",
                   width: "80%",
-                  backgroundColor: "green",
+                  backgroundColor: "grey",
                   color: "white",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
                 }}
               >
-                <Message />
+                <Message message={_accidents.message} lang={_accidents.lang}/>
               </div>
             </div>
           </div>
@@ -167,7 +230,7 @@ export default function Simulation() {
                 justifyContent: "space-around",
               }}
             >
-              Nombre des jours sansaccident de travail
+              Nombre des jours sans accident de travail
             </h2>
             <div
               style={{
@@ -186,9 +249,10 @@ export default function Simulation() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
+                  fontSize: "50px",
                 }}
               >
-                61
+                {_accidents.nbr_jours_sans_accident}
               </h1>
             </div>
             <div
@@ -205,9 +269,9 @@ export default function Simulation() {
             style={{
               height: "100%",
               width: "40%",
-              display:"flex",
-              alignItems:"center",
-              justifyContent:"space-around"
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
             }}
           >
             <div
@@ -228,15 +292,17 @@ export default function Simulation() {
               >
                 إرتداء وسائل الوقاية إجباري
               </h2>
-              <div
-          
-              >
+              <div>
                 <h2
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-around",
-                      }}>PORTER VOS EQUIPEMENTS DE PROTECTION</h2>
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-around",
+                    textAlign: "center",
+                  }}
+                >
+                  PORTER VOS EQUIPEMENTS DE PROTECTION
+                </h2>
               </div>
             </div>
           </div>
@@ -283,9 +349,10 @@ export default function Simulation() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
+                  fontSize: "50px",
                 }}
               >
-                61
+                {_accidents.nbr_totale_accidents}
               </h1>
             </div>
             <div
@@ -300,6 +367,12 @@ export default function Simulation() {
           </div>
         </div>
       </main>
+      <ErrorDialog
+        style={{ transform: "none" }}
+        open={opening}
+        errorMsg={errorMsg}
+        onResult={handleOpeningResult}
+      />
     </>
   );
 }
