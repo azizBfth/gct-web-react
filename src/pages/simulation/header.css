@@ -1,0 +1,126 @@
+
+.header{
+   
+    display: flex;
+    align-items: center;
+    background-color:#fefee2 ;
+    height: 16%;
+    padding: 8px 8px;
+    color: whitesmoke;
+    justify-content: space-between;
+
+}
+.logo {
+    height: 120px;
+    margin:6px 6px;
+    background-color: whitesmoke
+
+}
+
+
+@media   screen and (min-height: 48px) {
+    .logo {
+        height: 12px;
+        margin:6px 6px;
+    
+    }
+}
+@media   screen and (min-height: 64px) {
+   .logo {
+        height: 14px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+
+  @media   screen and (min-height: 96px) {
+    .logo {
+        height: 16px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+
+  @media   screen and (min-height: 128px) {
+   .logo {
+        height: 20px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+@media   screen and (min-height: 192px) {
+   .logo {
+        height: 30px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+  @media   screen and (min-height: 256px) {
+   .logo {
+        height: 36px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+
+  @media   screen and (min-height: 320px) {
+    .logo {
+        height: 38px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+  @media   screen and (min-height: 384px) {
+  .logo {
+        height: 50px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+  @media   screen and (min-height: 448px) {
+   .logo {
+        height: 60px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+  @media   screen and (min-height: 512px) {
+    .logo {
+        height:70px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+  @media   screen and (min-height: 600px) {
+   .logo {
+        height: 80px;
+        margin:6px 6px;
+    
+    }
+   
+  }
+  @media   screen and (min-height: 700px) {
+  .logo {
+        height: 90px;
+        margin:6px 8;
+    
+    }
+   
+  }
+  @media   screen and (min-height: 800px) {
+    .logo {
+        height: 90px;
+        margin:6px 6px;
+    
+    }
+   
+  }
