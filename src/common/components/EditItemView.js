@@ -115,7 +115,7 @@ const EditItemView = ({
     if (id) {
       url += `/${id}`;
     }
-    console.log("ITEM:::::", getWithExpiry("TOKEN"));
+   // console.log("ITEM:::::", getWithExpiry("TOKEN"));
     const response = await fetch(url, {
       method: !id ? "POST" : "PUT",
       headers: {

@@ -125,7 +125,7 @@ export default function Simulation() {
                 style={{
                   height: "100%",
                   width: "20%",
-                  backgroundColor: "black",
+                  backgroundColor: "#686868",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
@@ -154,7 +154,7 @@ export default function Simulation() {
                   justifyContent: "space-around",
                 }}
               >
-                <Message message={_accidents.message} lang={_accidents.lang}/>
+                <Message message={_accidents.message} lang={_accidents.lang} />
               </div>
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function Simulation() {
         <div
           style={{
             display: "flex",
-            height: "60%",
+            height: "40%",
             color: "blue",
           }}
         >
@@ -255,15 +255,7 @@ export default function Simulation() {
                 {_accidents.nbr_jours_sans_accident}
               </h1>
             </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
-              }}
-            >
-              <img alt="" className="logo" src={Icons2} />
-            </div>
+            
           </div>
           <div
             style={{
@@ -330,7 +322,7 @@ export default function Simulation() {
                 justifyContent: "space-around",
               }}
             >
-              Nombre total d'accident de travail
+              Nombre total d'accidents de travail
             </h2>
             <div
               style={{
@@ -355,6 +347,59 @@ export default function Simulation() {
                 {_accidents.nbr_totale_accidents}
               </h1>
             </div>
+          
+          </div>
+        </div>
+
+
+        <div
+          style={{
+            display: "flex",
+            height: "20%",
+            color: "blue",
+          }}
+        >
+          <div
+            style={{
+              height: "100%",
+              width: "30%",
+              backgroundColor: "#fefee2",
+              color: "blue",
+            }}
+          >
+           
+           
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-around",
+              }}
+            >
+              <img alt="" className="logo" src={Icons2} />
+            </div>
+          </div>
+          <div
+            style={{
+              height: "100%",
+              width: "40%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
+            }}
+          >
+          
+          </div>
+          <div
+            style={{
+              height: "100%",
+              width: "30%",
+              backgroundColor: "#fefee2",
+              color: "blue",
+            }}
+          >
+    
+      
             <div
               style={{
                 display: "flex",
