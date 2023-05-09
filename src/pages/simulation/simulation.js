@@ -74,7 +74,7 @@ export default function Simulation() {
         style={{
           //  display: "flex",
           //flexDirection: "column",
-          height: "100%",
+          height: "84%",
           backgroundColor: "#fefee2",
           color: "blue",
         }}
@@ -110,8 +110,8 @@ export default function Simulation() {
                 color: "blue",
               }}
             >
-              <h2>DATE/HEURE/TEMPERATURE</h2>
-              <h2>التاريخ / التوقيت / درجة الحرارة</h2>
+              <h2 className="size">DATE/HEURE/TEMPERATURE</h2>
+              <h2 className="size">التاريخ / التوقيت / درجة الحرارة</h2>
             </div>
             <div
               style={{
@@ -132,18 +132,18 @@ export default function Simulation() {
                 }}
               >
                 <h1
+                className="tempMsg"
                   style={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-around",
-                    fontSize: "60px",
                     color: "blue",
                   }}
                 >
                   {_accidents.temperature} °C{" "}
                 </h1>
               </div>
-              <div
+              <div className="tempMsg"
                 style={{
                   height: "100%",
                   width: "80%",
@@ -166,13 +166,13 @@ export default function Simulation() {
           >
             <div
               style={{
-                height: "30%",
+                height: "20%",
                 width: "100%",
               }}
             ></div>
             <div
               style={{
-                height: "70%",
+                height: "80%",
                 width: "100%",
                 color: "blue",
               }}
@@ -183,10 +183,11 @@ export default function Simulation() {
                   alignItems: "center",
                   justifyContent: "space-around",
                 }}
+                className="size"
               >
                 رسالة اليوم
               </h2>
-              <h2
+              <h2 className="size"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -214,7 +215,13 @@ export default function Simulation() {
               color: "blue",
             }}
           >
-            <h2
+ <div style={{
+              height: "60%",
+              width: "100%",
+              backgroundColor: "#fefee2",
+              color: "blue",
+            }}>
+    <h2 className="size"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -223,18 +230,28 @@ export default function Simulation() {
             >
               عدد الايام بدون حوادث عمل
             </h2>
-            <h2
+            <h2 className="size"
               style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-around",
+                textAlign:"center"
+
               }}
             >
               Nombre des jours sans accident de travail
             </h2>
-            <div
+            </div>
+
+            <div style={{
+              height: "40%",
+              width: "100%",
+              backgroundColor: "#fefee2",
+              color: "blue",
+            }}>
+         <div
               style={{
-                height: "30%",
+                height: "50%",
                 width: "60%",
                 backgroundColor: "grey",
                 color: "white",
@@ -249,12 +266,16 @@ export default function Simulation() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
-                  fontSize: "50px",
                 }}
+                className="size"
               >
                 {_accidents.nbr_jours_sans_accident}
               </h1>
             </div>
+            </div>
+
+
+          
             
           </div>
           <div
@@ -268,10 +289,10 @@ export default function Simulation() {
           >
             <div
               style={{
-                height: "50%",
+                height: "70%",
                 width: "70%",
                 backgroundColor: "red",
-                border: "5px solid white",
+                border: "2px solid white",
                 color: "white",
               }}
             >
@@ -281,11 +302,12 @@ export default function Simulation() {
                   alignItems: "center",
                   justifyContent: "space-around",
                 }}
+                className="size"
               >
                 إرتداء وسائل الوقاية إجباري
               </h2>
               <div>
-                <h2
+                <h2 className="size"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -306,7 +328,13 @@ export default function Simulation() {
               color: "blue",
             }}
           >
-            <h2
+            <div style={{
+              height: "60%",
+              width: "100%",
+              backgroundColor: "#fefee2",
+              color: "blue",
+            }}>
+    <h2 className="size"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -315,18 +343,28 @@ export default function Simulation() {
             >
               العدد الجملي لحوادث الشغل
             </h2>
-            <h2
+            <h2 className="size"
               style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-around",
+                textAlign:"center"
+
               }}
             >
               Nombre total d'accidents de travail
             </h2>
-            <div
+            </div>
+
+            <div style={{
+              height: "40%",
+              width: "100%",
+              backgroundColor: "#fefee2",
+              color: "blue",
+            }}>
+         <div
               style={{
-                height: "30%",
+                height: "50%",
                 width: "60%",
                 backgroundColor: "grey",
                 color: "white",
@@ -341,12 +379,18 @@ export default function Simulation() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
-                  fontSize: "50px",
+                  textAlign:"center"
                 }}
+                className="size"
               >
                 {_accidents.nbr_totale_accidents}
               </h1>
             </div>
+            </div>
+        
+         
+         
+   
           
           </div>
         </div>

@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { accidentsActions } from "../../store";
 
+import './simulation.css'
+
 export default function Message({ message, lang }) {
 
 
@@ -71,16 +73,14 @@ export default function Message({ message, lang }) {
     
   return (
     <>
-      <div>
+      <div className="tempMsg">
         {isTime ? (<Time />):(
         <Marquee
           speed={10}
-
+          className="tempMsg"
           style={{
-            height: "100%",
-            width: "100%",
+           
             color: "whitesmoke",
-            fontSize: "50px",
           }}
           direction={lang === "Fr" ? "left" : "right"}
           gradient={false}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorDialog from "../../common/components/ErrorDialog";
 
+import './simulation.css'
 export default function Time() {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const navigate = useNavigate()
@@ -40,6 +41,7 @@ export default function Time() {
 
   return (<>
   <div
+  className="tempMsg"
       style={{
         paddingLeft: '10px',
         paddingRight: '10px',
@@ -49,7 +51,6 @@ export default function Time() {
         justifyContent: 'space-between' ,
         color: 'red',
         height: '100%',
-        fontSize:"60px"
       }}
     >
       <div>{currentTime}</div>
