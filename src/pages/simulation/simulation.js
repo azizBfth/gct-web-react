@@ -132,7 +132,7 @@ export default function Simulation() {
                 }}
               >
                 <h1
-                className="tempMsg"
+                  className="tempMsg"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -143,7 +143,8 @@ export default function Simulation() {
                   {_accidents.temperature} °C{" "}
                 </h1>
               </div>
-              <div className="tempMsg"
+              <div
+                className="tempMsg"
                 style={{
                   height: "100%",
                   width: "80%",
@@ -187,7 +188,8 @@ export default function Simulation() {
               >
                 رسالة اليوم
               </h2>
-              <h2 className="size"
+              <h2
+                className="size"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -215,68 +217,69 @@ export default function Simulation() {
               color: "blue",
             }}
           >
- <div style={{
-              height: "60%",
-              width: "100%",
-              backgroundColor: "#fefee2",
-              color: "blue",
-            }}>
-    <h2 className="size"
+            <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
+                height: "60%",
+                width: "100%",
+                backgroundColor: "#fefee2",
+                color: "blue",
               }}
             >
-              عدد الايام بدون حوادث عمل
-            </h2>
-            <h2 className="size"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
-                textAlign:"center"
-
-              }}
-            >
-              Nombre des jours sans accident de travail
-            </h2>
-            </div>
-
-            <div style={{
-              height: "40%",
-              width: "100%",
-              backgroundColor: "#fefee2",
-              color: "blue",
-            }}>
-         <div
-              style={{
-                height: "50%",
-                width: "60%",
-                backgroundColor: "grey",
-                color: "white",
-                margin: "auto",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
-              }}
-            >
-              <h1
+              <h2
+                className="size"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
                 }}
-                className="size"
               >
-                {_accidents.nbr_jours_sans_accident}
-              </h1>
-            </div>
+                عدد الايام بدون حوادث عمل
+              </h2>
+              <h2
+                className="size"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  textAlign: "center",
+                }}
+              >
+                Nombre des jours sans accident de travail
+              </h2>
             </div>
 
-
-          
-            
+            <div
+              style={{
+                height: "40%",
+                width: "100%",
+                backgroundColor: "#fefee2",
+                color: "blue",
+              }}
+            >
+              <div
+                style={{
+                  height: "50%",
+                  width: "60%",
+                  backgroundColor: "grey",
+                  color: "white",
+                  margin: "auto",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                }}
+              >
+                <h1
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-around",
+                  }}
+                  className="size"
+                >
+                  {_accidents.nbr_jours_sans_accident}
+                </h1>
+              </div>
+            </div>
           </div>
           <div
             style={{
@@ -289,8 +292,8 @@ export default function Simulation() {
           >
             <div
               style={{
-                height: "70%",
-                width: "70%",
+                height: "100%",
+                width: "80%",
                 backgroundColor: "red",
                 border: "2px solid white",
                 color: "white",
@@ -307,7 +310,8 @@ export default function Simulation() {
                 إرتداء وسائل الوقاية إجباري
               </h2>
               <div>
-                <h2 className="size"
+                <h2
+                  className="size"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -328,73 +332,72 @@ export default function Simulation() {
               color: "blue",
             }}
           >
-            <div style={{
-              height: "60%",
-              width: "100%",
-              backgroundColor: "#fefee2",
-              color: "blue",
-            }}>
-    <h2 className="size"
+            <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
+                height: "60%",
+                width: "100%",
+                backgroundColor: "#fefee2",
+                color: "blue",
               }}
             >
-              العدد الجملي لحوادث الشغل
-            </h2>
-            <h2 className="size"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
-                textAlign:"center"
-
-              }}
-            >
-              Nombre total d'accidents de travail
-            </h2>
-            </div>
-
-            <div style={{
-              height: "40%",
-              width: "100%",
-              backgroundColor: "#fefee2",
-              color: "blue",
-            }}>
-         <div
-              style={{
-                height: "50%",
-                width: "60%",
-                backgroundColor: "grey",
-                color: "white",
-                margin: "auto",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
-              }}
-            >
-              <h1
+              <h2
+                className="size"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-around",
-                  textAlign:"center"
                 }}
-                className="size"
               >
-                {_accidents.nbr_totale_accidents}
-              </h1>
+                العدد الجملي لحوادث الشغل
+              </h2>
+              <h2
+                className="size"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  textAlign: "center",
+                }}
+              >
+                Nombre total d'accidents de travail
+              </h2>
             </div>
+
+            <div
+              style={{
+                height: "40%",
+                width: "100%",
+                backgroundColor: "#fefee2",
+                color: "blue",
+              }}
+            >
+              <div
+                style={{
+                  height: "50%",
+                  width: "60%",
+                  backgroundColor: "grey",
+                  color: "white",
+                  margin: "auto",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                }}
+              >
+                <h1
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-around",
+                    textAlign: "center",
+                  }}
+                  className="size"
+                >
+                  {_accidents.nbr_totale_accidents}
+                </h1>
+              </div>
             </div>
-        
-         
-         
-   
-          
           </div>
         </div>
-
 
         <div
           style={{
@@ -411,8 +414,6 @@ export default function Simulation() {
               color: "blue",
             }}
           >
-           
-           
             <div
               style={{
                 display: "flex",
@@ -431,9 +432,7 @@ export default function Simulation() {
               alignItems: "center",
               justifyContent: "space-around",
             }}
-          >
-          
-          </div>
+          ></div>
           <div
             style={{
               height: "100%",
@@ -442,8 +441,6 @@ export default function Simulation() {
               color: "blue",
             }}
           >
-    
-      
             <div
               style={{
                 display: "flex",
