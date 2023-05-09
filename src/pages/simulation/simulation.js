@@ -234,7 +234,7 @@ export default function Simulation() {
             </h2>
             <div
               style={{
-                height: "20%",
+                height: "30%",
                 width: "60%",
                 backgroundColor: "grey",
                 color: "white",
@@ -326,7 +326,7 @@ export default function Simulation() {
             </h2>
             <div
               style={{
-                height: "20%",
+                height: "30%",
                 width: "60%",
                 backgroundColor: "grey",
                 color: "white",

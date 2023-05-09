@@ -34,7 +34,12 @@ const AccidentPage = () => {
     item.nbr_totale_accidents &&
  
     item.nbr_jours_sans_accident;
-
+    const isFr = (message) => {
+      console.log("MESSAGE::",message);
+      const regex = new RegExp('^[A-Za-z]');   
+      console.log("TEST::",regex.test(message)) 
+      return regex.test(message);
+    }
   return (
     <EditItemView
       endpoint="accidents"
@@ -76,7 +81,7 @@ const AccidentPage = () => {
                style={{ "width": "100%" }}
                value={item.message || ''}
                onChange={(event) =>
-                 setItem({ ...item, message: event.target.value })
+                 setItem({ ...item, message: event.target.value , lang:isFr(event.target.value)?"Fr":"Ar"})
                }
               // label={t('sharedName')}
               label= "Message " />

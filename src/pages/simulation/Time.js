@@ -17,8 +17,7 @@ export default function Time() {
   function getCurrentTime(separator = ':') {
     let today = new Date();
 
-
-
+    let date=new Date().toISOString().split("T")[0]
 
     let hr = String(today.getHours()).padStart(2, '0');
     let min = String(today.getMinutes()).padStart(2, '0');
@@ -26,7 +25,7 @@ export default function Time() {
 
     //console.log("CURENT TME",hr,":",min)
 
-    return ` ${hr}${separator}${min}${separator}${sec}`;
+    return `${date} ${hr}${separator}${min}${separator}${sec}`;
   }
   useEffect(() => {
     // Update the current time every second
